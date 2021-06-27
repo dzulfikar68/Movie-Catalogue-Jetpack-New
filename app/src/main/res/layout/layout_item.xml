@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:layout_height="100dp"
+      android:orientation="vertical"
+      android:clickable="true"
+      android:focusable="true"
+      android:background="?android:attr/selectableItemBackground"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+    <ImageView
+        tools:src="@drawable/ic_launcher_background"
+        android:scaleType="centerCrop"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/coverImageView"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:textColor="@android:color/black"
+        tools:text="title"
+        android:minLines="1"
+        android:ellipsize="end"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_toEndOf="@id/coverImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/titleTextView"/>
+
+    <TextView
+        android:textColor="@android:color/black"
+        tools:text="0.0"
+        android:textSize="17sp"
+        android:gravity="center"
+        android:drawablePadding="5dp"
+        android:drawableStart="@drawable/ic_stars_yellow_24dp"
+        android:paddingBottom="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/coverImageView"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/voteTextView"/>
+
+    <TextView
+        android:drawablePadding="5dp"
+        android:drawableStart="@drawable/ic_date_range_yellow_24dp"
+        android:textColor="@android:color/black"
+        tools:text="date"
+        android:textSize="17sp"
+        android:paddingBottom="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/releaseTextView"
+        tools:ignore="RelativeOverlap" />
+
+    <View
+        android:id="@+id/lineView"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="0.01dp"
+        android:background="@android:color/darker_gray"/>
+
+</RelativeLayout>

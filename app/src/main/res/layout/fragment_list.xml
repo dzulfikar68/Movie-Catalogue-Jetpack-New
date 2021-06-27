@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:visibility="gone"
+              android:layout_centerInParent="true"
+              android:textStyle="italic"
+              android:id="@+id/notFoundTextView"
+              android:text="@string/data_not_found"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/contentListRecycleView"
+        tools:listitem="@layout/layout_item"/>
+
+</RelativeLayout>

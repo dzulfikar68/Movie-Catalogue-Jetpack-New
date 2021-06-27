@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Movie Catalogue</string>
+    <string name="title_movie">Movie</string>
+    <string name="title_tv">TV</string>
+    <string name="data_not_found">data not found</string>
+    <string name="title_activity_detail">Detail Activity</string>
+    <string name="title">title</string>
+    <string name="overview">overview</string>
+</resources>
