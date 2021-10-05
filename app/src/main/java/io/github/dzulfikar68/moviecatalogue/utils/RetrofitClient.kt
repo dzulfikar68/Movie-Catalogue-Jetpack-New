@@ -1,6 +1,5 @@
-package io.github.dzulfikar68.moviecatalogue.main.control
+package io.github.dzulfikar68.moviecatalogue.utils
 
-import io.github.dzulfikar68.moviecatalogue.main.entity.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

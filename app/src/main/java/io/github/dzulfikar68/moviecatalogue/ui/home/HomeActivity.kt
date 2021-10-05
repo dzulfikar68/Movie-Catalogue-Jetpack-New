@@ -1,29 +1,29 @@
-package io.github.dzulfikar68.moviecatalogue.home.boundary
+package io.github.dzulfikar68.moviecatalogue.ui.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import io.github.dzulfikar68.moviecatalogue.R
-import io.github.dzulfikar68.moviecatalogue.home.control.HomeViewModel
-import io.github.dzulfikar68.moviecatalogue.main.boundary.openFragment
-import io.github.dzulfikar68.moviecatalogue.main.boundary.setActionBar
-import kotlinx.android.synthetic.main.activity_main.*
+import io.github.dzulfikar68.moviecatalogue.databinding.ActivityMainBinding
+import io.github.dzulfikar68.moviecatalogue.ui.movie.MovieFragment
+import io.github.dzulfikar68.moviecatalogue.ui.tv.TvFragment
+import io.github.dzulfikar68.moviecatalogue.utils.openFragment
+import io.github.dzulfikar68.moviecatalogue.utils.setActionBar
 
 class HomeActivity : AppCompatActivity() {
-
-    private var viewModel: HomeViewModel? = null
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_movie -> {
-                supportFragmentManager.openFragment(MovieFragment(),
+                supportFragmentManager.openFragment(
+                    MovieFragment(),
                     R.id.container
                 )
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_tv -> {
-                supportFragmentManager.openFragment(TvFragment(),
+                supportFragmentManager.openFragment(
+                    TvFragment(),
                     R.id.container
                 )
                 return@OnNavigationItemSelectedListener true
@@ -40,11 +40,8 @@ class HomeActivity : AppCompatActivity() {
         setActionBar("Home Movie", false)
         supportFragmentManager.openFragment(MovieFragment(), R.id.container)
 
-        //run view model
-        viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        viewModel?.run()
-
         //set listener
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        findViewById<BottomNavigationView>(R.id.navigation).setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        supportActionBar?.elevation = 0f
     }
 }

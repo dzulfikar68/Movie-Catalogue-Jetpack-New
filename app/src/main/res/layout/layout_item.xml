@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:tools="http://schemas.android.com/tools"
-      tools:layout_height="100dp"
-      android:orientation="vertical"
-      android:clickable="true"
-      android:focusable="true"
-      android:background="?android:attr/selectableItemBackground"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:layout_height="100dp"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?android:attr/selectableItemBackground"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <ImageView
         tools:src="@drawable/ic_launcher_background"
         android:scaleType="centerCrop"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:id="@+id/coverImageView"
+        android:id="@+id/cover_image_view"
         tools:ignore="ContentDescription" />
 
     <TextView
@@ -26,10 +26,10 @@
         android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_toEndOf="@id/coverImageView"
+        android:layout_toEndOf="@id/cover_image_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/titleTextView"/>
+        android:id="@+id/title_text_view"/>
 
     <TextView
         android:textColor="@android:color/black"
@@ -40,11 +40,11 @@
         android:drawableStart="@drawable/ic_stars_yellow_24dp"
         android:paddingBottom="10dp"
         android:layout_marginStart="20dp"
-        android:layout_toEndOf="@id/coverImageView"
+        android:layout_toEndOf="@id/cover_image_view"
         android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/voteTextView"/>
+        android:id="@+id/vote_text_view"/>
 
     <TextView
         android:drawablePadding="5dp"
@@ -58,11 +58,11 @@
         android:layout_alignParentEnd="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/releaseTextView"
+        android:id="@+id/release_text_view"
         tools:ignore="RelativeOverlap" />
 
     <View
-        android:id="@+id/lineView"
+        android:id="@+id/line_view"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="0.01dp"

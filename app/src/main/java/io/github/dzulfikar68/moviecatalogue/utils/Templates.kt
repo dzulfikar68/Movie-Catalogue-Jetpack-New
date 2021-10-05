@@ -1,4 +1,4 @@
-package io.github.dzulfikar68.moviecatalogue.main.boundary
+package io.github.dzulfikar68.moviecatalogue.utils
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment

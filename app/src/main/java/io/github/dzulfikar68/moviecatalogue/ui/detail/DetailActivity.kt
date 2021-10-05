@@ -1,4 +1,4 @@
-package io.github.dzulfikar68.moviecatalogue.home.boundary
+package io.github.dzulfikar68.moviecatalogue.ui.detail
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -7,28 +7,29 @@ import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import io.github.dzulfikar68.moviecatalogue.R
+import io.github.dzulfikar68.moviecatalogue.databinding.ActivityDetailBinding
 import io.github.dzulfikar68.moviecatalogue.home.control.HomeViewModel
 import io.github.dzulfikar68.moviecatalogue.main.boundary.setActionBar
+import io.github.dzulfikar68.moviecatalogue.utils.setActionBar
 import kotlinx.android.synthetic.main.activity_detail.*
 import kotlinx.android.synthetic.main.fragment_detail.*
 
 
 class DetailActivity : AppCompatActivity() {
 
-    var viewModel: HomeViewModel? = null
-
     companion object {
-        const val EXTRA_MOVIE = "EXTRA_MOVIE"
+        const val EXTRA_MOVIE = "extra_movie"
     }
+
+    private lateinit var activityDetailBinding: ActivityDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail)
-        setSupportActionBar(toolbar)
+//        setContentView(R.layout.activity_detail)
+//        setSupportActionBar(findViewById(R.id.toolbar))
+        activityDetailBinding = ActivityDetailBinding.inflate(layoutInflater)
+        setContentView(activityDetailBinding.root)
         setActionBar("Detail Movie", true)
-
-        viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        viewModel?.run()
 
         val id: Int = intent.getIntExtra(EXTRA_MOVIE, 0)
         val movie = viewModel?.getById(id)

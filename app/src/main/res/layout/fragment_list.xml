@@ -8,13 +8,13 @@
               android:visibility="gone"
               android:layout_centerInParent="true"
               android:textStyle="italic"
-              android:id="@+id/notFoundTextView"
+              android:id="@+id/not_found_text_view"
               android:text="@string/data_not_found"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/contentListRecycleView"
+        android:id="@+id/content_list_recycle_view"
         tools:listitem="@layout/layout_item"/>
 
 </RelativeLayout>

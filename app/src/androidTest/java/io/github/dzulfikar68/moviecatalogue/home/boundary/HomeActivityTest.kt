@@ -12,6 +12,8 @@ import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
 import io.github.dzulfikar68.moviecatalogue.R
 import io.github.dzulfikar68.moviecatalogue.home.control.HomeViewModel
+import io.github.dzulfikar68.moviecatalogue.ui.detail.DetailActivity
+import io.github.dzulfikar68.moviecatalogue.ui.home.HomeActivity
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -22,7 +24,8 @@ class HomeActivityTest {
 
     @JvmField
     @Rule
-    var mActivityRule: ActivityTestRule<HomeActivity> = object : ActivityTestRule<HomeActivity>(HomeActivity::class.java) {
+    var mActivityRule: ActivityTestRule<HomeActivity> = object : ActivityTestRule<HomeActivity>(
+        HomeActivity::class.java) {
         override fun getActivityIntent(): Intent {
             val viewModel = HomeViewModel()
             viewModel.run()
@@ -36,7 +39,7 @@ class HomeActivityTest {
     @Test
     fun testMovieFragment() {
         onView(withId(R.id.contentListRecycleView)).check(matches(isDisplayed()))
-        onView(withId(R.id.contentListRecycleView)).perform(actionOnItemAtPosition<MovieAdapter.MovieViewHolder>(0, click()))
+        onView(withId(R.id.contentListRecycleView)).perform(actionOnItemAtPosition<MovieXAdapter.MovieViewHolder>(0, click()))
         onView(withId(R.id.titleTextView)).check(matches(isDisplayed()))
         onView(withId(R.id.titleTextView)).check(matches(withText("Memento")))
     }
@@ -46,7 +49,7 @@ class HomeActivityTest {
         onView(withId(R.id.navigation_tv)).check(matches(isDisplayed()))
         onView(withId(R.id.navigation_tv)).perform(click())
         onView(withId(R.id.contentListRecycleView)).check(matches(isDisplayed()))
-        onView(withId(R.id.contentListRecycleView)).perform(actionOnItemAtPosition<MovieAdapter.MovieViewHolder>(0, click()))
+        onView(withId(R.id.contentListRecycleView)).perform(actionOnItemAtPosition<MovieXAdapter.MovieViewHolder>(0, click()))
         onView(withId(R.id.titleTextView)).check(matches(isDisplayed()))
         onView(withId(R.id.titleTextView)).check(matches(withText("Gotham")))
     }
